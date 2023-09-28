@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+@import "../../styles/screensize";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .inner_container {
+    width: 80%;
+    background-color: $cardColor;
+    border: solid 0.5px $greyColor;
+    border-radius: 20px;
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: solid 0.5px $greyColor;
+      &:last-child {
+        border-bottom: none;
+      }
+      .first_section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .title {
+          font-weight: 700;
+          padding-bottom: 20px;
+        }
+        .subtitle {
+          font-weight: 300;
+          font-size: small;
+        }
+      }
+      .value {
+      }
+    }
+  }
+}

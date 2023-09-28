@@ -1,0 +1,79 @@
+@import "../../styles/variables";
+@import "../../styles/screensize";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  .inner_container {
+    width: 50%;
+    background-color: $cardColor;
+    border: solid 0.5px $greyColor;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    padding: 30px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .buttons {
+        background-color: $backgroundColor;
+        display: flex;
+        border-radius: 10px;
+        width: min-content;
+        p {
+          padding: 10px 15px;
+          &:hover {
+            border-radius: 10px;
+            background-color: $primaryColor;
+            color: $backgroundColor;
+          }
+        }
+        .active {
+          background-color: $primaryColor;
+          color: $backgroundColor;
+          border-radius: 10px;
+        }
+      }
+    }
+    .center {
+      padding: 20px 0;
+      .content {
+        .field {
+          display: flex;
+          height: 70px;
+          background-color: $backgroundColor;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 20px;
+          input {
+            background-color: $backgroundColor;
+            outline: none;
+            border: none;
+            color: $primaryColor;
+            border-radius: 10px;
+            width: 80%;
+            padding: 5px 10px;
+            font-size: larger;
+            &:disabled {
+              color: rgb(103, 106, 47);
+            }
+          }
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

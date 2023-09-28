@@ -1,0 +1,80 @@
+@import "../../../styles//variables";
+@import "../../../styles//screensize";
+
+.container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  // filter: grayscale(50%) sepia(100%) hue-rotate(243deg) saturate(100%);
+  background-image: linear-gradient(
+      rgba(126, 97, 0, 0.00158),
+      rgba(222, 215, 0, 0.001)
+    ),
+    url(../../../../public/images/flow_free.png);
+  .inner_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    @include mobileSS {
+      padding-top: 0px;
+      width: 90%;
+      flex-direction: column;
+    }
+    .text_content {
+      width: 70%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      padding: 20px 100px;
+      background-color: #000000b5;
+      border-radius: 20px;
+      @include mobileSS {
+        padding: 20px 10px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+      }
+      h1 {
+        font-size: 4rem;
+        padding-bottom: 40px;
+        @include mobileSS {
+          font-size: 3.5rem;
+        }
+      }
+      p {
+        font-size: 25px;
+        font-weight: 100;
+        padding-bottom: 20px;
+        line-height: 30px;
+        text-align: center;
+        @include mobileSS {
+          font-size: 20px;
+        }
+      }
+      .link {
+        padding-bottom: 40px;
+        input {
+          padding: 15px 35px;
+          border-style: none;
+          border-radius: 5px;
+          background-color: $primaryColor;
+          color: #fff;
+          &:hover {
+            color: #fff;
+            background-color: $backgroundColor;
+            border: 2px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
