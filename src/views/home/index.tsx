@@ -8,6 +8,7 @@ import Section2View from "./section/section2";
 import UseCaseView from "./use_case";
 import JumbutronView from "./jumbutron";
 import HomeNavbar from "./navbarr";
+import WrapView from "views/wrap";
 
 export default function HomeView() {
   // const {} = useweb3;
@@ -39,6 +40,7 @@ export default function HomeView() {
       />
       {/* <Section2View /> */}
       {/* <UseCaseView /> */}
+      <WrapView />
       <HomeFooter />
     </div>
   );

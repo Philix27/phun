@@ -17,6 +17,8 @@
     height: 100%;
     // padding-top: 20vh;
     @include mobileSS {
+      display: flex;
+      flex-direction: column;
       padding-top: 0px;
       width: 90%;
       flex-direction: column;
@@ -49,7 +51,7 @@
           // filter: grayscale(100%) sepia(100%) hue-rotate(243deg) saturate(100%);
           // filter: grayscale(0%);
           @include mobileSS {
-            height: 400px;
+            aspect-ratio: 9/8;
           }
         }
       }

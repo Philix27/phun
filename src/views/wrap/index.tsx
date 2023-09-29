@@ -1,125 +1,43 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
-import { Button } from "comp/button";
-import ProfileNavbar from "comp/navbar";
 import { useSigner } from "@thirdweb-dev/react";
+import SendMsg from "./form_comp";
+import MessagesList from "./msg";
 
 export default function WrapView() {
   const signer = useSigner();
-  const [isWrap, setIsWrap] = useState(true);
+  const [isFormActive, setFormActive] = useState(true);
   const [tokenValue, setTokenValue] = useState({
     base_coin: 1,
     converted_token: 1,
   });
   const handleSubmit = () => {};
 
-  // useEffect(() => {
-  //   new ethers.providers.Web3Provider(window.ethereum).getSigner();
-
-  // }, []);
-
   return (
     <div className={styles.container} id="container">
-      <ProfileNavbar />
+      <h1>Chat Anonymously</h1>
       <div className={styles.inner_container}>
         <div className={styles.top}>
           <div className={styles.buttons}>
             <p
-              onClick={() => setIsWrap(true)}
-              className={isWrap ? styles.active : ""}
+              onClick={() => setFormActive(true)}
+              className={isFormActive ? styles.active : ""}
             >
-              Wrap
+              Send Message
             </p>
             <p
-              onClick={() => setIsWrap(false)}
-              className={!isWrap ? styles.active : ""}
+              onClick={() => setFormActive(false)}
+              className={!isFormActive ? styles.active : ""}
             >
-              Unwrap
+              Your messages
             </p>
           </div>
-          <div>
+          {/* <div>
             <p>1 Diax = 1 Dia</p>
-          </div>
+          </div> */}
         </div>
-        <div className={styles.center}>
-          <div className={styles.content}>
-            {convertedFrom({
-              title: isWrap ? "Dia" : "Diax",
-              holder: "from",
-              val: tokenValue.base_coin.toString(),
-              onChange: (e) => {
-                let _val = Number(e.target.value);
-                if (_val <= 0) _val = 1;
-                setTokenValue((prev) => ({
-                  ...prev,
-                  base_coin: _val,
-                }));
-              },
-            })}
-            {convertedTo({
-              title: !isWrap ? "Dia" : "Diax",
-              holder: "to",
-              val: tokenValue.base_coin.toString(),
-              onChange: (e) => {
-                setTokenValue((prev) => ({
-                  ...prev,
-                  converted_token: Number(e.target.value),
-                }));
-              },
-            })}
-          </div>
-        </div>
-        <div className={styles.bottom}>
-          <Button
-            text={"Wrap"}
-            onClick={() => {
-              handleSubmit();
-            }}
-          />
-        </div>
+        {isFormActive ? <SendMsg /> : <MessagesList />}
       </div>
-    </div>
-  );
-}
-
-function convertedFrom(props: {
-  holder?: string;
-  title: string;
-  val: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) {
-  return (
-    <div className={styles.field}>
-      <input
-        type="number"
-        placeholder={"amount"}
-        maxLength={8}
-        onChange={props.onChange}
-        value={props.val}
-        min={"1"}
-      />
-      <p>{props.title}</p>
-    </div>
-  );
-}
-
-function convertedTo(props: {
-  holder?: string;
-  title: string;
-  val: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) {
-  return (
-    <div className={styles.field}>
-      <input
-        type="number"
-        placeholder={"amount"}
-        disabled
-        maxLength={8}
-        onChange={props.onChange}
-        value={props.val}
-      />
-      <p>{props.title}</p>
     </div>
   );
 }
