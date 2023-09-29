@@ -14,7 +14,6 @@
   "dependencies": {
     "@metamask/detect-provider": "^2.0.0",
     "@reduxjs/toolkit": "^1.9.5",
-    "@superfluid-finance/sdk-core": "^0.6.8",
     "@thirdweb-dev/react": "^3.14.7",
     "@thirdweb-dev/sdk": "^3.10.27",
     "bignumber.js": "^9.0.1",

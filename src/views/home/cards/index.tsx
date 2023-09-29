@@ -2,25 +2,24 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { Button } from "comp/button";
 
-export default function CardsView() {
+type T = {
+  list: {
+    img: string;
+    title: string;
+    para: string;
+  }[];
+};
+export default function CardsView(props: T) {
   return (
     <section className={styles.container}>
       <div className={styles.inner_container}>
-        {cardItem({
-          img: "./cards/c1.png",
-          title: "Tokens",
-          p: "Convert your ERC20 tokens to a streamable token. It works for all ERC20 token",
-        })}
-        {cardItem({
-          img: "./cards/c3.png",
-          title: "Security",
-          p: "Relies on blockchain security infrastructure. Hence, very secured for moving money accross the globe",
-        })}
-        {cardItem({
-          img: "./cards/c2.png",
-          title: "Funds",
-          p: "Move funds every seconds. Leverage on this technology for a fast pace, realtime payment system",
-        })}
+        {props.list.map((v, i) =>
+          cardItem({
+            img: v.img,
+            title: v.title,
+            p: v.para,
+          })
+        )}
       </div>
     </section>
   );
@@ -33,7 +32,7 @@ function cardItem(data: {
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-        <img src={data.img} alt="hero_img" />
+        <img src={data.img} alt={data.title} height={250} width={250} />
       </div>
       <div className={styles.text_content}>
         <h3>{data.title}</h3>

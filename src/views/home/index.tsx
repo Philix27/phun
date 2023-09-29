@@ -16,11 +16,29 @@ export default function HomeView() {
       <HomeNavbar />
       {/* <NavComp /> */}
       <HeroComp />
-      <JumbutronView />
-      <SectionView />
-      <CardsView />
-      <Section2View />
-      <UseCaseView />
+      {/* <JumbutronView /> */}
+      <SectionView image={"./images/phone_lock.png"} title={"Secrete Chat"} />
+      <CardsView
+        list={[
+          {
+            title: "Identity",
+            img: "./images/suprise.png",
+            para: "Mask your identity by using a wallet address to send and receive anonymous messages",
+          },
+          {
+            title: "Identity",
+            img: "./images/suprise.png",
+            para: "Mask your identity by using a wallet address to send and receive anonymous messages",
+          },
+          {
+            title: "Identity",
+            img: "./images/suprise.png",
+            para: "Mask your identity by using a wallet address to send and receive anonymous messages",
+          },
+        ]}
+      />
+      {/* <Section2View /> */}
+      {/* <UseCaseView /> */}
       <HomeFooter />
     </div>
   );

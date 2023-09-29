@@ -34,7 +34,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: $backgroundColor;
+  background-color: $secndaryColor;
   .inner_container {
     width: 80%;
     display: flex;
@@ -45,7 +45,7 @@
     .logo {
       color: #fff;
       a {
-        color: $primaryColor;
+        color: #fff;
         font-weight: 900;
         font-size: larger;
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;

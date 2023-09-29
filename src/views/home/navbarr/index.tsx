@@ -33,7 +33,7 @@ export default function HomeNavbar() {
       <div className={styles.inner_container}>
         <div className={styles.logo}>
           <Link href={"/"}>
-            <h3>Paysync</h3>
+            <h3>Phun</h3>
           </Link>
         </div>
         {showModal ? (

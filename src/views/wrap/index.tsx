@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { Button } from "comp/button";
 import ProfileNavbar from "comp/navbar";
-import { AppTokenManager } from "_core/service";
 import { useSigner } from "@thirdweb-dev/react";
 
 export default function WrapView() {
@@ -12,20 +11,13 @@ export default function WrapView() {
     base_coin: 1,
     converted_token: 1,
   });
-  const handleSubmit = () => {
-    const sf = new AppTokenManager();
-    sf.approve_token({
-      amount: tokenValue.converted_token.toString(),
-      signer: signer!,
-    });
-  };
+  const handleSubmit = () => {};
 
   // useEffect(() => {
   //   new ethers.providers.Web3Provider(window.ethereum).getSigner();
-  
-    
+
   // }, []);
-  
+
   return (
     <div className={styles.container} id="container">
       <ProfileNavbar />
@@ -35,7 +27,6 @@ export default function WrapView() {
             <p
               onClick={() => setIsWrap(true)}
               className={isWrap ? styles.active : ""}
-              
             >
               Wrap
             </p>
