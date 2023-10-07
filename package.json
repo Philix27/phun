@@ -39,7 +39,7 @@
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "hardhat": "^2.13.0",
-    "postcss": "8.4.24",
+    "postcss": "8.4.31",
     "prisma": "^4.11.0",
     "typescript": "5.1.6"
   }
